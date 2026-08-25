@@ -1,0 +1,15 @@
+[package]
+name = "rust-access-window"
+version = "0.1.0"
+edition = "2021"
+description = "临时访问窗口管理服务：访问申请、审批、时间窗口激活/撤销/过期"
+
+[dependencies]
+tiny_http = "0.12"
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde", "std"] }
+
+[profile.release]
+opt-level = 2
